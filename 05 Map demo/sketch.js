@@ -20,11 +20,16 @@ function renderMap(){
   for (let item of keyMap){
     //item is a mini array: [0]-> key  [1]->value
     let x = 50 + count*100;
-
+    setColor(item[0]);
     line(x, height/2, x, height/2 - item[1] );
     count++;
   }
+}
 
+function setColor(col){
+  if(col === "red") stroke(255,0,0);
+  else if (col === "green") stroke(0,255,0);
+  else if (col === "blue") stroke (0,0,255);
 }
 
 function setup() {
