@@ -4,13 +4,16 @@ let keyMap = new Map();
 
 function keyPressed(){
   if (key === "a"){
-    keyMap.set("red", 5);
+    if (keyMap.has("red")) keyMap.set("red", keyMap.get("red")+5);
+    else keyMap.set("red", 5);
   }
   if (key === "s"){
-    keyMap.set("green", 5);
+    if (keyMap.has("green")) keyMap.set("green", keyMap.get("green")+5);
+    else keyMap.set("green", 5);
   }
   if (key === "d"){
-    keyMap.set("blue", 5);
+    if (keyMap.has("blue")) keyMap.set("blue", keyMap.get("blue")+5);
+    else keyMap.set("blue", 5);
   }
   print(keyMap);
 }
