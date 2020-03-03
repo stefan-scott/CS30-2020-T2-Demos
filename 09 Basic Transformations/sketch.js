@@ -36,10 +36,16 @@ function draw() {
   push();  //new C.S just for seconds
   stroke(255,0,0);
   strokeWeight(2);
-  rotate(radians(frameCount));
+  rotate(radians(second()*6));
   line(0,0,width*.19,0);
   pop();  //pop seconds C.S
 
+  push(); //push Minutes C.S
+  stroke(0,255,0);
+  strokeWeight(3);
+  rotate(radians(minute()*6 + second()/10));
+  line(0,0,width*.18,0);
+  pop();
 
   pop();
 
