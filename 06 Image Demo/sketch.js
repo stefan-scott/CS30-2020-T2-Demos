@@ -34,7 +34,7 @@ function setup() {
 
 function draw() {
   print(movingLeft);
-  background(220);
+  background(255);
   determineDirection();
 
 
