@@ -6,6 +6,10 @@ const MAX_CIRCLE_SIZE = 200;
 let sizeTime = 10;
 let dT = 0.02;
 
+let perlinX = 5;
+let perlinY = 100;
+let movementdT = 0.1;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width/2;
@@ -15,7 +19,25 @@ function setup() {
 
 function draw() {
   background(220);
+  moveCirclePerlin();
   drawCircle();
+}
+
+function moveCirclePerlin(){
+  let xSpeed = noise(perlinX);
+  xSpeed = map(xSpeed, 0, 1, -10, 10);
+  x += xSpeed;
+  if(x < 0) x += width;
+  else if (x > width) x -= width;
+  perlinX += movementdT;
+
+  let ySpeed = noise(perlinY);
+  ySpeed = map(ySpeed, 0, 1, -10, 10);
+  y += ySpeed;
+  if(y < 0) y+=height;
+  else if (y > height) y -= height;
+  perlinY += movementdT;
+
 }
 
 function setSize(){
