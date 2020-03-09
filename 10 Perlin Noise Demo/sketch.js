@@ -15,12 +15,23 @@ function setup() {
   x = width/2;
   y = height/2;
   size = 50;
+  background(0);
+  noStroke();
 }
 
 function draw() {
-  background(220);
+  //background(220);
+  fill(0, 10);
+  rect(0,0,width,height);
+  setFill();
   moveCirclePerlin();
   drawCircle();
+}
+
+function setFill(){
+  let r = map(x, 0, width, 0, 255);
+  let g = map(y, 0, height, 0, 255);
+  fill(r, g, 180);
 }
 
 function moveCirclePerlin(){
