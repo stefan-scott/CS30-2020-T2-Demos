@@ -13,9 +13,9 @@ function setup() {
 function drawCircles(){
   for(let x = 0; x < width; x += 25){
     for(let y = 0; y < height; y += 25){
-      let r = map(noise(redTime),0,1,0,255);
+      let r = map(noise(redTime),0,1,0,20);
       fill(r, 0, 0);
-      ellipse(x,y,25,25);
+      ellipse(x,y,r,r);
       redTime += redSpeed;
     }
   }
