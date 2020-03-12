@@ -6,17 +6,25 @@ const PADDING = 60;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
+  noFill();
 }
 
 function drawGrid(){
   for (let x = gridSpacing/2 + PADDING; x < width - PADDING; x += gridSpacing){
     for (let y = gridSpacing/2 + PADDING; y < height - PADDING; y+= gridSpacing){
-      rect(x,y,gridSpacing,gridSpacing);
+      let amplitude = map(y,gridSpacing/2+PADDING, height-PADDING, 0, 45);
+      push();
+      translate(x,y);
+      rotate(radians(random(-amplitude,amplitude)));
+      rect(0,0,gridSpacing,gridSpacing);
+      pop();
+
     }
   }  
 }
 function draw() {
   background(220);
+  randomSeed(10);
   border();
   drawGrid();
 }
