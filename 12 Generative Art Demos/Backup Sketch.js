@@ -9,8 +9,8 @@ function draw() {
   border();
 }
 
-function border(){
+function border() {
   strokeWeight(15);
-  rect(0,0,width,height);
+  rect(0, 0, width, height);
   strokeWeight(2);
 }
